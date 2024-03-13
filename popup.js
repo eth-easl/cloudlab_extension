@@ -53,14 +53,14 @@ function getRawList(selector) {
 function getArrayList(selector) {
     let values = document.getElementsByTagName("kbd")
     
-    let urlList = "["
+    let urlList = "list = ["
     Array.from(values).forEach((element) => {
-        urlList = urlList + element.innerText + ","
+        urlList = urlList + "\"" + element.innerText + "\","
     });
 
     urlList = urlList.replaceAll("ssh ", "")
     urlList = urlList.slice(0,-1)
-    urlList = urlList + ']'
+    urlList = urlList + "]"
     
     return urlList
 }
